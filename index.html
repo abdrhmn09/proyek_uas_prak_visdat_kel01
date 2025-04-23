@@ -1,0 +1,171 @@
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Visualisasi Data Performa Siswa</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Hero Section with Dashboard Layout -->
+    <section class="hero">
+        <div class="dashboard-layout">
+            <div class="card center-card">Visualisasi Data Performa Siswa</div>
+            
+            <div class="card topic-card topic-1">
+                <div class="topic-title">
+                    Stres & Nilai
+                    <a href="pages/topik01.html" class="visualization-icon tooltip">
+                        📊
+                        <span class="tooltiptext">Lihat Visualisasi</span>
+                    </a>
+                </div>
+                <div class="topic-desc">Analisis hubungan antara tingkat stres dan nilai ujian siswa menggunakan box-plot.</div>
+            </div>
+            
+            <div class="card topic-card topic-2">
+                <div class="topic-title">
+                    Gaya Belajar
+                    <a href="pages/topik02.html" class="visualization-icon tooltip">
+                        📈
+                        <span class="tooltiptext">Lihat Visualisasi</span>
+                    </a>
+                </div>
+                <div class="topic-desc">Perbandingan metode belajar terbaik berdasarkan rata-rata nilai dan tingkat stres.</div>
+            </div>
+            
+            <div class="card topic-card topic-3">
+                <div class="topic-title">
+                    Pengaruh Media Sosial
+                    <a href="pages/topik03.html" class="visualization-icon tooltip">
+                        📱
+                        <span class="tooltiptext">Lihat Visualisasi</span>
+                    </a>
+                </div>
+                <div class="topic-desc">Analisis korelasi penggunaan media sosial terhadap performa akademik siswa.</div>
+            </div>
+            
+            <div class="card topic-card topic-4">
+                <div class="topic-title">
+                    Faktor Stres
+                    <a href="pages/topik04.html" class="visualization-icon tooltip">
+                        🧠
+                        <span class="tooltiptext">Lihat Visualisasi</span>
+                    </a>
+                </div>
+                <div class="topic-desc">Identifikasi faktor-faktor utama yang mempengaruhi tingkat stres siswa.</div>
+            </div>
+            
+            <div class="card topic-card topic-5">
+                <div class="topic-title">
+                    Dampak Kursus Online
+                    <a href="pages/topik05.html" class="visualization-icon tooltip">
+                        💻
+                        <span class="tooltiptext">Lihat Visualisasi</span>
+                    </a>
+                </div>
+                <div class="topic-desc">Evaluasi dampak jumlah kursus online terhadap nilai ujian.</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- MODIFIED: Background & Dataset Description Side by Side -->
+    <section class="info-section">
+        <div class="container">
+            <div class="split-container">
+                <div class="info-card section-bg-1">
+                    <div class="info-content">
+                        <h2>Latar Belakang</h2>
+                        <p>Pendidikan merupakan aspek penting dalam membentuk kualitas sumber daya manusia, terutama dalam jenjang pendidikan dasar dan menengah. Dalam proses pembelajaran, performa akademik siswa dipengaruhi oleh berbagai faktor, mulai dari tingkat stres, gaya belajar, kebiasaan belajar, hingga aktivitas digital seperti penggunaan media sosial.</p>
+                        
+                        <p>Untuk memahami kompleksitas faktor-faktor ini, pendekatan berbasis data menjadi sangat relevan. Visualisasi data dapat membantu mengidentifikasi pola-pola yang tersembunyi dan memberikan wawasan yang lebih mendalam bagi pendidik, orang tua, maupun pembuat kebijakan pendidikan.</p>
+                    </div>
+                </div>
+                
+                <div class="info-card section-bg-2">
+                    <div class="info-content">
+                        <h2>Asal dan Deskripsi Dataset</h2>
+                        <p>Dataset yang digunakan dalam visualisasi ini diambil dari platform Kaggle dengan judul <em>Student Performance and Learning Style</em>, yang dikembangkan oleh Adil Shamim. Dataset ini mencakup informasi dari sejumlah siswa yang mencerminkan berbagai atribut seperti gaya belajar, tingkat stres, kebiasaan penggunaan media sosial, partisipasi kelas, jam tidur, jumlah tugas yang diselesaikan, serta skor ujian mereka.</p>
+                        
+                        <p>Beberapa atribut penting dalam dataset ini meliputi:</p>
+                        <ul>
+                            <li><code>exam_score</code>: Skor ujian akhir siswa.</li>
+                            <li><code>stress_level</code>: Tingkat stres siswa (Low, Medium, High).</li>
+                            <li><code>learning_style</code>: Gaya belajar utama siswa (Visual, Auditory, Reading/Writing, Kinesthetic).</li>
+                            <li><code>social_media_usage</code>: Rata-rata jam penggunaan media sosial per hari.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- MODIFIED: Dataset Selection & Visualization Goals Side by Side -->
+    <section class="info-section">
+        <div class="container">
+            <div class="split-container">
+                <div class="info-card section-bg-3">
+                    <div class="info-content">
+                        <h2>Alasan Pemilihan Dataset</h2>
+                        <p>Dataset ini dipilih karena menyajikan kombinasi data kuantitatif dan kualitatif yang relevan untuk mengevaluasi performa siswa dari sudut pandang psikologis, pedagogis, dan digital.</p>
+                        
+                        <p>Selain itu, keberagaman atributnya memungkinkan eksplorasi berbagai hubungan antar variabel, serta penggunaan berbagai jenis grafik visualisasi untuk mendukung interpretasi yang lebih dalam.</p>
+                        
+                        <p>Dengan memahami faktor-faktor yang memengaruhi performa akademik siswa, kita dapat mengembangkan strategi pembelajaran yang lebih efektif dan personal sesuai dengan kebutuhan individu.</p>
+                    </div>
+                </div>
+                
+                <div class="info-card section-bg-4">
+                    <div class="info-content">
+                        <h2>Tujuan Visualisasi</h2>
+                        <p>Visualisasi data ini bertujuan untuk:</p>
+                        <ul>
+                            <li>Mengidentifikasi korelasi antara tingkat stres dan performa akademik melalui box-plot yang membandingkan distribusi nilai ujian berdasarkan kategori tingkat stres.</li>
+                            <li>Menentukan gaya belajar yang paling efektif dengan bar chart berkelompok yang membandingkan rata-rata skor ujian berdasarkan gaya belajar yang berbeda.</li>
+                            <li>Menganalisis pengaruh media sosial terhadap performa akademik menggunakan scatter plot dengan trend line.</li>
+                            <li>Mengidentifikasi faktor-faktor utama yang berkontribusi pada stres siswa melalui heatmap matriks korelasi.</li>
+                            <li>Mengevaluasi dampak kursus online terhadap prestasi akademik dengan bar chart pengelompokan.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="team-title">Tim Pembuat Visualisasi</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <div class="member-img">👤</div>
+                    <div class="member-info">
+                        <h3 class="member-name">Anggota Tim 1</h3>
+                        <p class="member-role">Data Analyst</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-img">👤</div>
+                    <div class="member-info">
+                        <h3 class="member-name">Anggota Tim 2</h3>
+                        <p class="member-role">Data Scientist</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-img">👤</div>
+                    <div class="member-info">
+                        <h3 class="member-name">Anggota Tim 3</h3>
+                        <p class="member-role">Visualisasi Designer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Dashboard Visualisasi Data Performa Siswa</p>
+    </footer>
+    <script href="main.js"></script>
+</body>
+</html>
