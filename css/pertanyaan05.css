@@ -1,0 +1,15 @@
+body {
+    font-family: sans-serif;
+  }
+  .bar {
+    fill: steelblue;
+  }
+  .label {
+    font-size: 12px;
+    fill: black;
+  }
+  .axis-label {
+    font-size: 13px;
+    font-weight: bold;
+  }
+  
