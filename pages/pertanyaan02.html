@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Style vs Exam Score & Stress Level</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <link rel="stylesheet" href="../css/pertanyaan02.css">
+</head>
+<body>
+  <div class="chart-container">
+    <h2>Average Exam Score and Stress Level by Learning Style</h2>
+    <div class="btn-group">
+      <button class="btn btn-all active" onclick="updateChart('all')">All</button>
+      <button class="btn btn-male" onclick="updateChart('Male')">Male</button>
+      <button class="btn btn-female" onclick="updateChart('Female')">Female</button>
+    </div>
+    <svg id="chart" width="800" height="450"></svg>
+  </div>
+  <script src="../js/pertanyaan02.js"></script>
+</body>
+</html>

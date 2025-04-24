@@ -1,4 +1,4 @@
-d3.csv("student_performance_large_dataset.csv").then(function(data) {
+d3.csv("/data/student_performance_large_dataset.csv").then(function(data) {
     let bins = {
       "0": [],
       "1–10": [],

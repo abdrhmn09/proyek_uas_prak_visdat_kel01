@@ -1,0 +1,24 @@
+body { font-family: Arial, sans-serif; margin: 20px; }
+    .chart-container { max-width: 800px; margin: 0 auto; }
+    .axis-label { font-weight: bold; font-size: 14px; }
+    .line { fill: none; stroke: tomato; stroke-width: 2px; }
+    .circle { fill: tomato; }
+    .legend { font-size: 13px; }
+    .btn-group { margin-bottom: 20px; }
+    .btn { 
+      padding: 6px 12px; 
+      margin-right: 5px; 
+      border: 2px solid transparent; 
+      color: white; 
+      cursor: pointer; 
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+    .btn:hover { opacity: 0.9; }
+    .btn.active {
+      box-shadow: 0 0 5px #000 inset;
+      opacity: 0.9;
+    }
+    .btn-all { background-color: purple; }
+    .btn-male { background-color: blue; }
+    .btn-female { background-color: crimson; }
