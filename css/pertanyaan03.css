@@ -1,0 +1,161 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #34495e;
+    --background-color: #f8f9fa;
+    --tooltip-bg: rgba(255, 255, 255, 0.95);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --border-radius: 0.5rem;
+    --transition: all 0.3s ease;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding: 1rem;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+  }
+  
+  #controls {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .custom-select {
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--primary-color);
+    background-color: white;
+    font-size: 1rem;
+    transition: var(--transition);
+    cursor: pointer;
+  }
+  
+  .custom-select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  }
+  
+  #heatmap {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+  }
+  
+  .tooltip {
+    position: absolute;
+    background: var(--tooltip-bg);
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    pointer-events: none;
+    font-size: 0.9rem;
+    backdrop-filter: blur(4px);
+    transition: opacity 0.2s, transform 0.2s;
+    border: 1px solid rgba(0,0,0,0.1);
+    z-index: 10;
+    transition: opacity 0.2s !important;
+    pointer-events: none; /* Mencegah tooltip mengganggu hover */
+  }
+  
+  .axis path,
+  .axis line {
+    stroke: var(--primary-color);
+    shape-rendering: crispEdges;
+    opacity: 0.3;
+  }
+  
+  .axis text {
+    fill: var(--text-color);
+    font-size: 0.8rem;
+  }
+  
+  #keterangan {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .insight-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+  }
+  
+  .insight-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .insight-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    body {
+      padding: 0.5rem;
+    }
+    
+    h1 {
+      font-size: 1.6rem;
+      margin: 1rem 0;
+    }
+    
+    #heatmap {
+      padding: 0.5rem;
+      overflow-x: auto;
+    }
+    
+    .custom-select {
+      width: 100%;
+      max-width: 300px;
+    }
+    
+    .insight-card {
+      padding: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .axis text {
+      font-size: 0.7rem;
+    }
+    
+    .tooltip {
+      font-size: 0.8rem;
+      padding: 0.6rem;
+    }
+  }

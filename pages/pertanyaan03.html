@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualisasi Heatmap Pengaruh Media Sosial Terhadap Nilai</title>
+  <link rel="stylesheet" href="/css/pertanyaan03.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Pengaruh Waktu Media Sosial Terhadap Nilai Siswa</h1>
+
+    <div id="controls">
+      <label for="genderFilter">Filter Gender:</label>
+      <select id="genderFilter" class="custom-select">
+        <option value="all">Semua</option>
+        <option value="Male">Laki-laki</option>
+        <option value="Female">Perempuan</option>
+      </select>
+    </div>
+
+    <div id="heatmap"></div>
+
+    <div id="keterangan">
+      <div class="insight-card">
+        <h3>📊 Kenapa Heatmap?</h3>
+        <p>Heatmap dipilih sebagai visualisasi yang paling tepat untuk menganalisis pengaruh waktu penggunaan media sosial terhadap nilai akademik siswa karena kemampuannya menyajikan hubungan dua variabel numerik (waktu dan nilai) secara visual melalui gradasi warna. Visualisasi ini mengatasi keterbatasan metode lain seperti scatter plot yang rentan mengalami tumpang-tindih data (overplotting) pada dataset besar, dengan mengelompokkan data ke dalam bin (kotak grid) yang merepresentasikan rata-rata nilai dalam rentang waktu tertentu. Warna yang kontras memudahkan identifikasi pola umum, seperti kecenderungan nilai tinggi pada waktu penggunaan media sosial rendah (area gelap di kiri bawah) dan nilai rendah pada waktu penggunaan tinggi (area terang di kanan atas). Selain itu, heatmap menyoroti anomali, misalnya kelompok siswa dengan waktu penggunaan tinggi tetapi nilai tetap baik, yang langsung terlihat sebagai titik warna mencolok di luar pola. Keunggulan lain terletak pada kemudahan interpretasi untuk beragam audiens: gradasi warna intuitif bagi non-teknis, sementara agregasi data dalam tiap bin (jumlah siswa, rentang nilai, dan rata-rata) memberikan kedalaman analitis bagi pengguna ahli. Struktur grid yang ringkas juga memungkinkan visualisasi tetap informatif bahkan pada layar terbatas, didukung fitur interaktif seperti tooltip untuk detail data. Dengan kombinasi efisiensi ruang, kejelasan pola, dan fleksibilitas analisis, heatmap menjadi pilihan optimal untuk mengeksplorasi korelasi kompleks antara kebiasaan digital dan performa akademik.</p>
+      </div>
+      
+      <div class="insight-card">
+        <h3>🔍 Insight dari Visualisasi</h3>
+        <p>Terdapat korelasi negatif antara waktu media sosial dan nilai siswa: penggunaan >20 jam/minggu terkait nilai ≤60%, sementara kurang dari 10 jam/minggu cenderung nilai ≥80%. Siswa perempuan dominan di penggunaan sedang (10-15 jam) dengan nilai 70-80%, sedangkan laki-laki lebih banyak di kategori ekstrem (penggunaan tinggi-nilai rendah). Terdapat anomali: sebagian siswa tetap berprestasi baik meski penggunaan tinggi, dan sebaliknya. Rekomendasi utama: batasi penggunaan media sosial (kurang dari 15 jam/minggu) dan kombinasikan dengan pendekatan holistik untuk optimalkan hasil akademik.</p>
+        <p>Analisis menunjukkan hubungan negatif antara durasi penggunaan media sosial dan prestasi akademik siswa, dengan rekomendasi pembatasan waktu penggunaan (kurang dari 15 jam/minggu) untuk hasil optimal. Perbedaan pola berdasarkan gender (perempuan di rentang sedang, laki-laki di kategori ekstrem) serta keberadaan anomali (siswa berprestasi tinggi meski penggunaan media sosial intens) menegaskan perlunya pendekatan personalisasi dalam manajemen waktu digital, didukung literasi teknologi dan pemantauan lingkungan belajar.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/pertanyaan03.js"></script>
+</body>
+</html>
