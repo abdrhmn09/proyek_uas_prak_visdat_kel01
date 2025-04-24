@@ -1,34 +1,32 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-  }
-  
-  .tooltip {
-    position: absolute;
-    padding: 8px;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    border-radius: 4px;
-    pointer-events: none;
-    font-size: 12px;
-  }
-  
-  .cell:hover {
-    stroke: #000;
-    stroke-width: 1px;
-  }
-  
-  .axis text {
-    font-size: 12px;
-  }
-  
-  h2 {
-    text-align: center;
-    color: #333;
-  }
-  
-  .legend-title {
-    font-size: 12px;
-    font-weight: bold;
-  }
-  
+  font-family: "Segoe UI", sans-serif;
+  margin: 20px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  max-width: 100%;
+}
+
+.tooltip {
+  position: absolute;
+  text-align: left;
+  padding: 6px 10px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  pointer-events: none;
+  font-size: 12px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.15);
+  color: #333;
+}
