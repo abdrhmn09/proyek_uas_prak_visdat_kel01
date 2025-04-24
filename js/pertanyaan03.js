@@ -1,3 +1,12 @@
+fetch("../navbar/Navbar.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("navbar-container").innerHTML = data;
+    markActiveNavLink();
+    setupNavbarInteractions();
+  })
+  .catch((err) => console.error("Error mengambil navbar:", err));
+
 const margin = {top: 60, right: 20, bottom: 60, left: 60},
       width = 800 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
