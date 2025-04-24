@@ -1,3 +1,13 @@
+fetch("../navbar/Navbar.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("navbar-container").innerHTML = data;
+    markActiveNavLink();
+    setupNavbarInteractions();
+  })
+  .catch((err) => console.error("Error mengambil navbar:", err));
+
+
 // Data mahasiswa yang sama dengan yang Anda berikan
 const rawData = [
     {"Study_Hours_per_Week":48,"Online_Courses_Completed":14,"Assignment_Completion_Rate (%)":100,"Exam_Score (%)":69,"Attendance_Rate (%)":66,"Time_Spent_on_Social_Media (hours/week)":9,"Sleep_Hours_per_Night":8,"Self_Reported_Stress_Level":"High"},

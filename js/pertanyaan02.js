@@ -1,3 +1,13 @@
+fetch("../navbar/Navbar.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("navbar-container").innerHTML = data;
+    markActiveNavLink();
+    setupNavbarInteractions();
+  })
+  .catch((err) => console.error("Error mengambil navbar:", err));
+
+
 const svg = d3.select('#chart'),
       margin = { top: 50, right: 60, bottom: 80, left: 60 },
       width = +svg.attr('width') - margin.left - margin.right,

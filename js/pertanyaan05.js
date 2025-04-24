@@ -1,3 +1,14 @@
+fetch("../navbar/Navbar.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("navbar-container").innerHTML = data;
+    markActiveNavLink();
+    setupNavbarInteractions();
+  })
+  .catch((err) => console.error("Error mengambil navbar:", err));
+
+
+
 d3.csv("/data/student_performance_large_dataset.csv").then(function(data) {
     let bins = {
       "0": [],
