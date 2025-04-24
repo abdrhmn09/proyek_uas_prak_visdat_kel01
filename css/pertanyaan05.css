@@ -12,4 +12,9 @@ body {
     font-size: 13px;
     font-weight: bold;
   }
+
+  #bar-group svg {
+    display: block;      /* agar margin auto bekerja */
+    margin: 0 auto;      /* vertikal 0, horizontal auto */
+  }
   
