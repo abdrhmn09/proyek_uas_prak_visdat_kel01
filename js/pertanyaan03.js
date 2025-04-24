@@ -11,7 +11,7 @@ const svg = d3.select("#heatmap")
 
 const tooltip = d3.select("body").append("div").attr("class", "tooltip").style("opacity", 0);
 
-d3.csv("data/student_performance_large_dataset.csv").then(data => {
+d3.csv("../data/student_performance_large_dataset.csv").then(data => {
   data.forEach(d => {
     d.SocialMediaHours = +d["Time_Spent_on_Social_Media (hours/week)"];
     d.ExamScore = +d["Exam_Score (%)"];
