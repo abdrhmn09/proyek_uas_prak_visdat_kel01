@@ -1,135 +1,122 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Dashboard D3.js</title>
-  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <title>Dashboard Kartu</title>
   <style>
     body {
       font-family: sans-serif;
       margin: 0;
-      padding: 0;
       background: #f4f6f8;
     }
-    /* grid container untuk panels */
-    .dashboard {
+    .cards {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-auto-rows: minmax(300px, auto);
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 20px;
       padding: 20px;
     }
-    .panel {
+    .card {
       background: white;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      padding: 12px;
-      position: relative;
-    }
-    .panel h3 {
-      margin: 0 0 10px;
-      font-size: 1.1rem;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 6px;
-    }
-    /* penempatan manual */
-    #panel1 { grid-column: 1; }
-    #panel2 { grid-column: 2; }
-    #panel3 { grid-column: 3; }
-    #panel4 { grid-column: 1; }
-    #panel5 { grid-column: 2; }
-    /* full‐width untuk SVG agar responsif */
-    .panel svg {
-      width: 100%;
-      height: 100%;
-    }
-    /* styling tombol filter (panel2) */
-    .filter-btns {
-      text-align: center;
-      margin-top: 8px;
-    }
-    .filter-btns button {
-      margin: 0 4px;
-      padding: 6px 12px;
-      border: none;
-      border-radius: 4px;
-      background: #ddd;
+      overflow: hidden;
       cursor: pointer;
+      transition: transform .1s, box-shadow .1s;
     }
-    .filter-btns button.active {
-      background: #bbb;
-      box-shadow: inset 0 0 3px #888;
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .card img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      height: 120px;
+    }
+    .card-content {
+      padding: 12px;
+    }
+    .card-title {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .card-text {
+      margin: 0;
+      font-size: .9rem;
+      color: #555;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar (static file) -->
+  <!-- Navbar kamu -->
   <div id="navbar-container"></div>
-
-  <div class="dashboard">
-    <!-- Panel 1: boxplot + table -->
-    <div id="panel1" class="panel">
-      <h3>Stress vs Exam Score</h3>
-      <div id="box-plot"></div>
-      <div id="stats-summary"></div>
-    </div>
-
-    <!-- Panel 2: bar + line + filter -->
-    <div id="panel2" class="panel">
-      <h3>Avg Score & Stress by Learning Style</h3>
-      <svg id="chart" width="100%" height="300"></svg>
-      <div class="filter-btns">
-        <button class="filter-all active">All</button>
-        <button class="filter-male">Male</button>
-        <button class="filter-female">Female</button>
-      </div>
-    </div>
-
-    <!-- Panel 3: heatmap social media -->
-    <div id="panel3" class="panel">
-      <h3>Heatmap: Social Media vs Score</h3>
-      <select id="genderFilter" style="margin-bottom:8px;">
-        <option value="all">All</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-      </select>
-      <div id="heatmap1"></div>
-    </div>
-
-    <!-- Panel 4: correlation heatmap -->
-    <div id="panel4" class="panel">
-      <h3>Correlation Heatmap</h3>
-      <div id="heatmap2"></div>
-    </div>
-
-    <!-- Panel 5: grouped bar chart -->
-    <div id="panel5" class="panel">
-      <h3>Avg Score by #Online Courses</h3>
-      <div id="bar-group">
-        <svg width="100%" height="300"></svg>
-      </div>
-    </div>
-  </div>
-
   <script>
-    // load navbar.html secara statis
     fetch("../navbar/Navbar.html")
       .then(r => r.text())
       .then(html => {
         document.getElementById("navbar-container").innerHTML = html;
-        // kalau navbar kamu butuh init JS, panggil di sini
         if (window.markActiveNavLink) markActiveNavLink();
         if (window.setupNavbarInteractions) setupNavbarInteractions();
       });
   </script>
 
-  <!-- setelah navbar, load kelima skrip D3 kamu -->
-  <script src="/js/pertanyaan01.js"></script> <!-- buat #box-plot & #stats-summary -->
-  <script src="/js/pertanyaan02.js"></script> <!-- buat svg#chart & tombol -->
-  <script src="/js/pertanyaan03.js"></script> <!-- ganti selektor ke "#heatmap1" -->
-  <script src="/js/pertanyaan04.js"></script> <!-- ganti selektor ke "#heatmap2" -->
-  <script src="/js/pertanyaan05.js"></script> <!-- otomatis target <svg> di #bar-group -->
+  <div class="cards">
+    <!-- Kartu 1: Box-Plot -->
+    <div class="card" data-target="../pages/pertanyaan01.html">
+      <img src="/image/image1.png" alt="Box Plot">
+      <div class="card-content">
+        <h4 class="card-title">Stress vs Exam Score</h4>
+        <p class="card-text">Ringkasan statistik & box-plot</p>
+      </div>
+    </div>
+
+    <!-- Kartu 2: Bar & Line -->
+    <div class="card" data-target="../pages/pertanyaan02.html">
+      <img src="/image/image2.png" alt="Bar & Line">
+      <div class="card-content">
+        <h4 class="card-title">Avg Score & Stress</h4>
+        <p class="card-text">Bar & line chart per gender</p>
+      </div>
+    </div>
+
+    <!-- Kartu 3: Heatmap Social Media -->
+    <div class="card" data-target="../pages/pertanyaan03.html">
+      <img src="/image/image3.png" alt="Heatmap Social Media">
+      <div class="card-content">
+        <h4 class="card-title">Social Media vs Score</h4>
+        <p class="card-text">Heatmap interaktif</p>
+      </div>
+    </div>
+
+    <!-- Kartu 4: Correlation Heatmap -->
+    <div class="card" data-target="../pages/pertanyaan04.html">
+      <img src="/image/image4.png" alt="Correlation Heatmap">
+      <div class="card-content">
+        <h4 class="card-title">Stress Factors Correlation</h4>
+        <p class="card-text">Heatmap korelasi fitur</p>
+      </div>
+    </div>
+
+    <!-- Kartu 5: Online Courses Bar -->
+    <div class="card" data-target="../pages/pertanyaan05.html">
+      <img src="/image/image5.png" alt="Bar Online Courses">
+      <div class="card-content">
+        <h4 class="card-title">Online Courses vs Score</h4>
+        <p class="card-text">Rata-rata skor per grup</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // klik kartu → navigasi
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        const url = card.getAttribute('data-target');
+        window.location.href = url;
+      });
+    });
+  </script>
 </body>
 </html>
